@@ -1,8 +1,8 @@
 package com.WebTesting.WebTesting_Hybrid_Framework;
 
-import static org.junit.Assert.assertTrue;
-
-import org.junit.Test;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.Test;
 
 /**
  * Unit test for simple App.
@@ -15,6 +15,7 @@ public class AppTest
     @Test
     public void shouldAnswerWithTrue()
     {
-        assertTrue( true );
+        WebDriver driver = new ChromeDriver();
+        driver.get("https://wipro.udemy.com/course/selenium-real-time-examplesinterview-questions/learn/lecture/33469186#overview");
     }
 }
