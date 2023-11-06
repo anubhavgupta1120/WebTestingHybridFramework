@@ -21,10 +21,11 @@ public class StandAloneTest_1 {
 		ChromeOptions options = new ChromeOptions();
 		options.addArguments("--disable-notifications");
 		WebDriver driver = new ChromeDriver(options);
+				
 		driver.manage().window().maximize();
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
 		driver.get("https://rahulshettyacademy.com/client");
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
 
 		// Login in the page (Sending details and Clicking on the login button)
 		driver.findElement(By.cssSelector("#userEmail")).sendKeys("anubhavgupta@gmail.com");
@@ -40,12 +41,12 @@ public class StandAloneTest_1 {
 		productName.findElement(By.cssSelector("button:last-of-type")).click();
 
 		// some codition before proceed further
-
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("#toast-container")));
 		wait.until(ExpectedConditions.invisibilityOf(driver.findElement(By.cssSelector(".ng-animating"))));
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("#toast-container")));
+		
 
 		// clicking on add to cart
-		Thread.sleep(6000);
+//		Thread.sleep(6000);
 //		wait.until(ExpectedConditions.visibilityOf(driver.findElement(By.cssSelector("[routerlink*='cart']"))));
 //		WebElement element = driver.findElement(By.cssSelector("[routerlink*='cart']"));
 //		JavascriptExecutor js = (JavascriptExecutor) driver;
@@ -61,6 +62,7 @@ public class StandAloneTest_1 {
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".ta-results")));
 		driver.findElement(By.xpath("(//button[contains(@class,'ta-item')])[2]")).click();
 		driver.findElement(By.cssSelector(".action__submit")).click();
+		wait.until(ExpectedConditions.textToBe(By.cssSelector(".hero-primary"), "THANKYOU FOR THE ORDER."));
 		String confirmMessage = driver.findElement(By.cssSelector(".hero-primary")).getText();
 		assertTrue(confirmMessage.equalsIgnoreCase("THANKYOU FOR THE ORDER."));
 		driver.close();
