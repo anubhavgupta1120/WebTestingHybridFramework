@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2023-11-06T17:15:02 IST" name="Default suite" finished-at="2023-11-06T17:15:11 IST" duration-ms="8656">
+    <groups>
+    </groups>
+    <test started-at="2023-11-06T17:15:02 IST" name="Default test" finished-at="2023-11-06T17:15:11 IST" duration-ms="8656">
+      <class name="TestCasesFolder.E_Commerce">
+        <test-method is-config="true" signature="initialize()[pri:0, instance:TestCasesFolder.E_Commerce@7714e963]" started-at="2023-11-06T17:15:02 IST" name="initialize" finished-at="2023-11-06T17:15:04 IST" duration-ms="1580" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initialize -->
+        <test-method signature="Test()[pri:0, instance:TestCasesFolder.E_Commerce@7714e963]" started-at="2023-11-06T17:15:04 IST" name="Test" finished-at="2023-11-06T17:15:11 IST" duration-ms="6976" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Test -->
+        <test-method is-config="true" signature="terminate()[pri:0, instance:TestCasesFolder.E_Commerce@7714e963]" started-at="2023-11-06T17:15:11 IST" name="terminate" finished-at="2023-11-06T17:15:11 IST" duration-ms="84" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- terminate -->
+      </class> <!-- TestCasesFolder.E_Commerce -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
