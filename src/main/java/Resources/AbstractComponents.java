@@ -59,7 +59,7 @@ public class AbstractComponents {
 	
 	
 	
-	// handeling navigatio bar Elements
+	// handeling navigation bar Elements
 	
 	@FindBy(how = How.CSS, using = "[routerlink*='cart']")
 	WebElement cartElement;
