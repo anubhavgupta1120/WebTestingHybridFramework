@@ -6,8 +6,8 @@
       <class name="TestCasesFolder.E_Commerce">
         <methods>
           <include name="Test"/>
-          <include name="initialize"/>
-          <include name="terminate"/>
+          <include name="launchApplication"/>
+          <include name="tearDown"/>
         </methods>
       </class> <!-- TestCasesFolder.E_Commerce -->
     </classes>

@@ -8,7 +8,7 @@ import org.openqa.selenium.support.PageFactory;
 
 import Resources.AbstractComponents;
 
-public class LoginPage extends AbstractComponents{
+public class LoginPage extends AbstractComponents {
 
 	WebDriver driver;
 
@@ -30,6 +30,9 @@ public class LoginPage extends AbstractComponents{
 	@FindBy(how = How.CSS, using = "#login")
 	private WebElement loginElement;
 
+	@FindBy(how = How.CSS, using = "[class*= 'flyInOut']")
+	private WebElement errorMessage;
+
 	public ProductsPage loginToApplication(String email, String password) {
 		try {
 			emailElement.sendKeys(email);
@@ -38,14 +41,19 @@ public class LoginPage extends AbstractComponents{
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		
+
 		return new ProductsPage(driver);
 
 	}
-	
+
 	public void goToBaseUrl() {
 		// baseUrl
 		driver.get("https://rahulshettyacademy.com/client");
+	}
+
+	public String getErrorMessage() {
+		waitForWebElement(errorMessage);
+		return errorMessage.getText();
 	}
 
 }

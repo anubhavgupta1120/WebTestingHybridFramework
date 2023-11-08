@@ -2,28 +2,24 @@ package TestCasesFolder;
 
 import static org.testng.Assert.assertTrue;
 
-import java.time.Duration;
+import java.io.IOException;
 import java.util.List;
 
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 import PageObjects.CartPage;
 import PageObjects.ConfirmationPage;
-import PageObjects.LoginPage;
+import PageObjects.OrderPage;
 import PageObjects.PaymentPage;
 import PageObjects.ProductsPage;
+import TestComponents.BaseTest;
 
-public class E_Commerce {
+public class E_Commerce extends BaseTest {
 	WebDriver driver;
 
 	@Test
-	public void Test() throws InterruptedException {
-		LoginPage loginPage = new LoginPage(driver);
-		loginPage.goToBaseUrl();
+	public void Test() throws InterruptedException, IOException {
 		ProductsPage productsPage = loginPage.loginToApplication("anubhavgupta@gmail.com", "Anubhav@11");
 		productsPage.selectProducts(List.of("ZARA COAT 3"));
 		CartPage cartPage = productsPage.goToCart();
@@ -32,17 +28,8 @@ public class E_Commerce {
 		paymentPage.selectCountry("India");
 		ConfirmationPage confirmationPage = paymentPage.placeOrder();
 		assertTrue(confirmationPage.getConfirmationText().equalsIgnoreCase("THANKYOU FOR THE ORDER."));
+		OrderPage orderPage = confirmationPage.goToOrders();
+		assertTrue(orderPage.verifyOrdersDisplay(List.of("ZARA COAT 3")));
 	}
 
-	@BeforeTest
-	public void initialize() {
-		driver = new ChromeDriver();
-		driver.manage().window().maximize();
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-	}
-
-	@AfterTest
-	public void terminate() {
-		driver.quit();
-	}
 }
