@@ -19,7 +19,7 @@ public class E_Commerce extends BaseTest {
 	WebDriver driver;
 
 	@Test
-	public void Test() throws InterruptedException, IOException {
+	public void submitOrder() throws InterruptedException, IOException {
 		ProductsPage productsPage = loginPage.loginToApplication("anubhavgupta@gmail.com", "Anubhav@11");
 		productsPage.selectProducts(List.of("ZARA COAT 3"));
 		CartPage cartPage = productsPage.goToCart();
@@ -28,8 +28,17 @@ public class E_Commerce extends BaseTest {
 		paymentPage.selectCountry("India");
 		ConfirmationPage confirmationPage = paymentPage.placeOrder();
 		assertTrue(confirmationPage.getConfirmationText().equalsIgnoreCase("THANKYOU FOR THE ORDER."));
-		OrderPage orderPage = confirmationPage.goToOrders();
+
+	}
+
+	// To verify the orders Page (Checking the order places is visible in Order section)
+
+	@Test(dependsOnMethods = { "submitOrder" })
+	public void OrderHistory() {
+		ProductsPage productsPage = loginPage.loginToApplication("anubhavgupta@gmail.com", "Anubhav@11");
+		OrderPage orderPage = productsPage.goToOrders();
 		assertTrue(orderPage.verifyOrdersDisplay(List.of("ZARA COAT 3")));
+
 	}
 
 }

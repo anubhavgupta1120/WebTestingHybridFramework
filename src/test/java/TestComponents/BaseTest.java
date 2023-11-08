@@ -24,13 +24,17 @@ public class BaseTest {
 
 	public WebDriver initializeDriver() throws IOException {
 		// Invoking properties file of Resource Folder
-		//Change path if you want to run it in Your system
-		/**-----------------------------------------------------------------------------------------------------------**/
+		// Change path if you want to run it in Your system
+		/**
+		 * -----------------------------------------------------------------------------------------------------------
+		 **/
 		Properties properties = new Properties();
 		FileInputStream FIS = new FileInputStream(
-			"/Users/anubhavgupta/Documents/eclipse-workspace(Java)/WebTesting_Hybrid_Framework/Resources/GlobalData.properties");
+				"/Users/anubhavgupta/Documents/eclipse-workspace(Java)/WebTesting_Hybrid_Framework/Resources/GlobalData.properties");
 		properties.load(FIS);
-		/**-----------------------------------------------------------------------------------------------------------**/
+		/**
+		 * -----------------------------------------------------------------------------------------------------------
+		 **/
 		String browserName = properties.getProperty("Browser");
 		if (browserName.contains("chrome")) {
 
@@ -62,7 +66,7 @@ public class BaseTest {
 
 		return driver;
 	}
-	
+
 	@BeforeMethod(alwaysRun = true)
 	public LoginPage launchApplication() throws IOException {
 		driver = initializeDriver();
@@ -70,6 +74,7 @@ public class BaseTest {
 		loginPage.goToBaseUrl();
 		return loginPage;
 	}
+
 	@AfterMethod(alwaysRun = true)
 	public void tearDown() {
 		driver.quit();
