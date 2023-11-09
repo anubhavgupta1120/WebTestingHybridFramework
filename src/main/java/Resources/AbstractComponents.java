@@ -1,7 +1,10 @@
 package Resources;
 
+import java.io.FileInputStream;
+import java.io.IOException;
 import java.time.Duration;
 import java.util.List;
+import java.util.Properties;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -75,6 +78,14 @@ public class AbstractComponents {
 	public OrderPage goToOrders() {
 		orderElement.click();
 		return new OrderPage(driver);
+	}
+	
+	public String getProperty(String key) throws IOException {
+		Properties properties = new Properties();
+		FileInputStream FIS = new FileInputStream(
+				"/Users/anubhavgupta/Documents/eclipse-workspace(Java)/WebTesting_Hybrid_Framework/Resources/GlobalData.properties");
+		properties.load(FIS);
+		return properties.getProperty(key);
 	}
 	
 }
