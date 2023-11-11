@@ -4,12 +4,12 @@
 	<listeners>
 		<listener class-name="TestComponents.Listeners" />
 	</listeners>
-	<test thread-count="5" name="Submit Order Test">
+	<test thread-count="2" name="Submit Order Test">
 		<classes>
 			<class name="TestCasesFolder.E_Commerce" />
 		</classes>
 	</test>
-	<test thread-count="5" name="Error Validation Test">
+	<test thread-count="2" name="Error Validation Test">
 		<classes>
 			<class name="TestCasesFolder.ErrorValidations"/>
 		</classes>

@@ -6,6 +6,9 @@
 			<include name="ErrorHandling"></include>
 		</run>
 	</groups>
+	<listeners>
+		<listener class-name="TestComponents.Listeners" />
+	</listeners>
 	<test thread-count="5" name="Submit Order Test">
 		<classes>
 			<class name="TestCasesFolder.E_Commerce" />
@@ -13,7 +16,7 @@
 	</test>
 	<test name="Error Validation Test">
 		<classes>
-			<class name="TestCasesFolder.ErrorValidations"/>
+			<class name="TestCasesFolder.ErrorValidations" />
 		</classes>
 	</test>
 </suite> 

@@ -25,7 +25,7 @@
       <span class="top-banner-title-font">Test results</span>
       <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
       <br/>
-      <span class="top-banner-font-1">1 suite, 1 failed test</span>
+      <span class="top-banner-font-1">1 suite</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -39,7 +39,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" panel-name="suite-Suite" class="navigator-link">
-              <span class="suite-name border-failed">Suite</span>
+              <span class="suite-name border-passed">Suite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -92,21 +92,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">5 methods, 1 failed,   4 passed</span>
-                  </li>
-                  <li>
-                    <span class="method-list-title failed">Failed methods</span>
-                    <span class="show-or-hide-methods failed">
-                      <a href="#" panel-name="suite-Suite" class="hide-methods failed suite-Suite"> (hide)</a> <!-- hide-methods failed suite-Suite -->
-                      <a href="#" panel-name="suite-Suite" class="show-methods failed suite-Suite"> (show)</a> <!-- show-methods failed suite-Suite -->
-                    </span>
-                    <div class="method-list-content failed suite-Suite">
-                      <span>
-                        <img src="failed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="TestCasesFolder.ErrorValidations" class="method navigator-link" hash-for-method="LoginErrorValidation">LoginErrorValidation</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                    </div> <!-- method-list-content failed suite-Suite -->
+                    <span class="method-stats">5 methods,   5 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -115,6 +101,11 @@
                       <a href="#" panel-name="suite-Suite" class="show-methods passed suite-Suite"> (show)</a> <!-- show-methods passed suite-Suite -->
                     </span>
                     <div class="method-list-content passed suite-Suite">
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="TestCasesFolder.ErrorValidations" class="method navigator-link" hash-for-method="LoginErrorValidation">LoginErrorValidation</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
                         <a href="#" panel-name="suite-Suite" title="TestCasesFolder.E_Commerce" class="method navigator-link" hash-for-method="OrderHistory">OrderHistory</a> <!-- method navigator-link -->
@@ -147,30 +138,6 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Suite" class="panel Suite">
-          <div class="suite-Suite-class-failed">
-            <div class="main-panel-header rounded-window-top">
-              <img src="failed.png"/>
-              <span class="class-name">TestCasesFolder.ErrorValidations</span>
-            </div> <!-- main-panel-header rounded-window-top -->
-            <div class="main-panel-content rounded-window-bottom">
-              <div class="method">
-                <div class="method-content">
-                  <a name="LoginErrorValidation">
-                  </a> <!-- LoginErrorValidation -->
-                  <span class="method-name">LoginErrorValidation</span>
-                  <div class="stack-trace">java.lang.AssertionError: expected [Incorrect emmail or password.] but found [Incorrect email or password.]
-	at TestCasesFolder.ErrorValidations.LoginErrorValidation(ErrorValidations.java:22)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
-	at java.base/java.lang.Thread.run(Thread.java:833)
-... Removed 23 stack frames
-</div> <!-- stack-trace -->
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-            </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Suite-class-failed -->
           <div class="suite-Suite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
@@ -208,6 +175,13 @@
               <span class="class-name">TestCasesFolder.ErrorValidations</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="LoginErrorValidation">
+                  </a> <!-- LoginErrorValidation -->
+                  <span class="method-name">LoginErrorValidation</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
                   <a name="ProductErrorValidation">
@@ -296,28 +270,28 @@ data.addRows(5);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'submitOrder')
 data.setCell(0, 2, 'TestCasesFolder.E_Commerce')
-data.setCell(0, 3, 9374);
+data.setCell(0, 3, 9513);
 data.setCell(1, 0, 1)
 data.setCell(1, 1, 'submitOrder')
 data.setCell(1, 2, 'TestCasesFolder.E_Commerce')
-data.setCell(1, 3, 9362);
+data.setCell(1, 3, 9385);
 data.setCell(2, 0, 2)
 data.setCell(2, 1, 'ProductErrorValidation')
 data.setCell(2, 2, 'TestCasesFolder.ErrorValidations')
-data.setCell(2, 3, 8771);
+data.setCell(2, 3, 8787);
 data.setCell(3, 0, 3)
-data.setCell(3, 1, 'LoginErrorValidation')
-data.setCell(3, 2, 'TestCasesFolder.ErrorValidations')
-data.setCell(3, 3, 784);
+data.setCell(3, 1, 'OrderHistory')
+data.setCell(3, 2, 'TestCasesFolder.E_Commerce')
+data.setCell(3, 3, 503);
 data.setCell(4, 0, 4)
-data.setCell(4, 1, 'OrderHistory')
-data.setCell(4, 2, 'TestCasesFolder.E_Commerce')
-data.setCell(4, 3, 472);
+data.setCell(4, 1, 'LoginErrorValidation')
+data.setCell(4, 2, 'TestCasesFolder.ErrorValidations')
+data.setCell(4, 3, 292);
 window.suiteTableData['Suite']= { tableData: data, tableDiv: 'times-div-Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 26 seconds</span>
+              <span class="suite-total-time">Total running time: 27 seconds</span>
               <div id="times-div-Suite">
               </div> <!-- times-div-Suite -->
             </div> <!-- times-div -->
@@ -353,73 +327,77 @@ return data;
               <div class="chronological-class-name">TestCasesFolder.E_Commerce</div> <!-- chronological-class-name -->
               <div class="configuration-method before">
                 <span class="method-name">launchApplication</span>
-                <span class="method-start">83 ms</span>
+                <span class="method-start">113 ms</span>
               </div> <!-- configuration-method before -->
-              <div class="test-method">
-                <span class="method-name">submitOrder({password=Anubhav@11, product_2=ADIDAS ORIGINAL, email=anubhavgupta@gmail.com, product_1=ZARA COAT 3...)</span>
-                <span class="method-start">2539 ms</span>
-              </div> <!-- test-method -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">TestCasesFolder.ErrorValidations</div> <!-- chronological-class-name -->
               <div class="test-method">
-                <img src="failed.png">
-                </img>
                 <span class="method-name">LoginErrorValidation</span>
-                <span class="method-start">2559 ms</span>
+                <span class="method-start">3293 ms</span>
               </div> <!-- test-method -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">TestCasesFolder.E_Commerce</div> <!-- chronological-class-name -->
+              <div class="test-method">
+                <span class="method-name">submitOrder({password=Anubhav@11, product_2=ADIDAS ORIGINAL, email=anubhavgupta@gmail.com, product_1=ZARA COAT 3...)</span>
+                <span class="method-start">3345 ms</span>
+              </div> <!-- test-method -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">TestCasesFolder.ErrorValidations</div> <!-- chronological-class-name -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">3644 ms</span>
+                <span class="method-start">3587 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">launchApplication</span>
-                <span class="method-start">3725 ms</span>
+                <span class="method-start">3676 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">ProductErrorValidation</span>
-                <span class="method-start">5469 ms</span>
+                <span class="method-start">6333 ms</span>
               </div> <!-- test-method -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">TestCasesFolder.E_Commerce</div> <!-- chronological-class-name -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">11902 ms</span>
+                <span class="method-start">12731 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">launchApplication</span>
-                <span class="method-start">11989 ms</span>
+                <span class="method-start">12815 ms</span>
               </div> <!-- configuration-method before -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">TestCasesFolder.ErrorValidations</div> <!-- chronological-class-name -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">14241 ms</span>
+                <span class="method-start">15120 ms</span>
               </div> <!-- configuration-method after -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">TestCasesFolder.E_Commerce</div> <!-- chronological-class-name -->
               <div class="test-method">
                 <span class="method-name">submitOrder({password=Anubhav@11, product_2=ADIDAS ORIGINAL, email=anubhavgp11@gmail.com, product_1=ZARA COAT 3})</span>
-                <span class="method-start">14623 ms</span>
+                <span class="method-start">15552 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">23998 ms</span>
+                <span class="method-start">25066 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">launchApplication</span>
-                <span class="method-start">24081 ms</span>
+                <span class="method-start">25153 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">OrderHistory</span>
-                <span class="method-start">25838 ms</span>
+                <span class="method-start">26929 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">26311 ms</span>
+                <span class="method-start">27433 ms</span>
               </div> <!-- configuration-method after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

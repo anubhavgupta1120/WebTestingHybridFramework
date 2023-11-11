@@ -20,7 +20,7 @@ public class ErrorValidations extends BaseTest {
 	@Test(retryAnalyzer = Retry.class, groups = { "ErrorHandling" })
 	public void LoginErrorValidation() throws InterruptedException, IOException {
 		loginPage.loginToApplication("anubhavguptaa@gmail.com", "Anubhav@1122");
-		assertEquals(loginPage.getErrorMessage(), "Incorrect emmail or password.");
+		assertEquals(loginPage.getErrorMessage(), "Incorrect email or password.");
 	}
 
 	@Test(retryAnalyzer = Retry.class, groups = { "ErrorHandling" })
