@@ -11,6 +11,8 @@ import java.util.Properties;
 
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.Dimension;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -74,14 +76,25 @@ public class BaseTest {
 
 		return driver;
 	}
+
 	// Used to take data from json file.
 	public List<HashMap<String, String>> getJsonData(String JsonPath) throws IOException {
+		// convert json file to string
 		String jsonContent = FileUtils.readFileToString(new File(JsonPath), StandardCharsets.UTF_8);
+		// String to HashMap conversion (Jackson databind maven repo required)
 		ObjectMapper mapper = new ObjectMapper();
 		List<HashMap<String, String>> result = mapper.readValue(jsonContent,
 				new TypeReference<List<HashMap<String, String>>>() {
 				});
 		return result;
+	}
+
+	public String getScreenShot(String TestCaseName, WebDriver driver) throws IOException {
+		File sourceFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+		String pathOfSS = "/Users/anubhavgupta/Documents/eclipse-workspace(Java)/WebTesting_Hybrid_Framework/Screenshots/"
+				+ TestCaseName + ".png";
+		FileUtils.copyFile(sourceFile, new File(pathOfSS));
+		return pathOfSS;
 	}
 
 	@BeforeMethod(alwaysRun = true)

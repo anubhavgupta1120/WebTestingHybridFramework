@@ -29,6 +29,9 @@ public class OrderPage extends AbstractComponents {
 		try {
 			for (String product : products) {
 				match = orderList.stream().anyMatch(s -> s.getText().equalsIgnoreCase(product));
+				if(match == false) {
+					return match;
+				}
 
 			}
 			return match;

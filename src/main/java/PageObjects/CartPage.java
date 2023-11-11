@@ -31,6 +31,9 @@ public class CartPage extends AbstractComponents {
 			for (String product : products) {
 				match = cartProductList.stream()
 						.anyMatch(cartProduct -> cartProduct.getText().equalsIgnoreCase(product));
+				if(match == false) {
+					return match;
+				}
 
 			}
 			return match;
