@@ -21,6 +21,7 @@ public class ConfirmationPage extends AbstractComponents{
 	private WebElement confirmationText;
 
 	public String getConfirmationText() {
+		waitForWebElement(confirmationText);
 		return confirmationText.getText();
 	}
 }

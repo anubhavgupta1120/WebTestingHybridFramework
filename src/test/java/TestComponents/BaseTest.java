@@ -47,7 +47,7 @@ public class BaseTest {
 		 **/
 		String browserName = System.getProperty("Browser") != null ? System.getProperty("Browser")
 				: properties.getProperty("Browser");
-		if (browserName.contains("chrome")) {
+		if (browserName.contains("Chrome")) {
 
 			ChromeOptions options = new ChromeOptions();
 			if (browserName.contains("headless")) {

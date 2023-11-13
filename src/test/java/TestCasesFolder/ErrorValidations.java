@@ -1,7 +1,7 @@
 package TestCasesFolder;
 
 import static org.testng.Assert.assertEquals;
-import static org.testng.Assert.assertTrue;
+import static org.testng.Assert.assertFalse;
 
 import java.io.IOException;
 import java.util.List;
@@ -28,7 +28,7 @@ public class ErrorValidations extends BaseTest {
 		ProductsPage productsCatelouge = loginPage.loginToApplication("anubhavgp11@gmail.com", "Anubhav@11");
 		productsCatelouge.selectProducts(List.of("ADIDAS ORIGINAL", "ZARA COAT 3"));
 		CartPage cartPage = productsCatelouge.goToCart();
-		boolean res = cartPage.verifyCart(List.of("ADIDAS ORIGINAL", "ZARA COAT 3"));
-		assertTrue(res);
+		boolean res = cartPage.verifyCart(List.of("ADIDAS ORIGINAL", "ZARA COAT "));
+		assertFalse(res);
 	}
 }
